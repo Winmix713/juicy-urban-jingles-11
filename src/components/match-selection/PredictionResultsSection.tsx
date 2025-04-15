@@ -8,6 +8,8 @@ interface PredictionResultsSectionProps {
 }
 
 const PredictionResultsSection: React.FC<PredictionResultsSectionProps> = ({ selectedTeams }) => {
+  if (selectedTeams.length === 0) return null;
+
   return (
     <div className="mt-16 animate-fade-in" style={{animationDelay: "0.7s"}}>
       <h3 className="text-2xl font-bold text-white mb-6">Predikciók eredménye</h3>

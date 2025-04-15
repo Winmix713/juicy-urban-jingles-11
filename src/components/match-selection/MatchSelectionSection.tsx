@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo, useEffect } from 'react';
 import { toast } from 'sonner';
 import { PREMIER_LEAGUE_TEAMS } from '../../data/premier-league-teams';
@@ -9,7 +10,7 @@ import MatchSubmitButton from './MatchSubmitButton';
 const MatchSelectionSection = () => {
   // State for selected teams in each match card (now 8 matches with none selected by default)
   const [selectedTeams, setSelectedTeams] = useState([
-    { home: null, away: null },
+    { home: PREMIER_LEAGUE_TEAMS.find(t => t.id === "arsenal"), away: PREMIER_LEAGUE_TEAMS.find(t => t.id === "chelsea") },
     { home: null, away: null },
     { home: null, away: null },
     { home: null, away: null },
@@ -115,7 +116,7 @@ const MatchSelectionSection = () => {
         
         <MatchSubmitButton onClick={handleSubmitPredictions} />
         
-        {predictionRun && selectedTeams.some(match => match.home && match.away) && !allMatchesCompleted && (
+        {predictionRun && (
           <PredictionResultsSection 
             selectedTeams={selectedTeams.filter(match => match.home && match.away)} 
           />
