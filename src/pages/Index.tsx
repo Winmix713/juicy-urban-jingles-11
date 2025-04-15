@@ -6,6 +6,7 @@ import MatchSelectionSection from '../components/match-selection/MatchSelectionS
 import CallToAction from '../components/CallToAction';
 import Footer from '../components/Footer';
 import TopPredictions from '../components/TopPredictions';
+import LeaderboardTable from '../components/leaderboard/LeaderboardTable';
 
 const Index = () => {
   // Scroll to top on page load
@@ -28,6 +29,9 @@ const Index = () => {
         </section>
         <section id="match-selection">
           <MatchSelectionSection />
+        </section>
+        <section id="leaderboard" className="py-20">
+          <LeaderboardTable />
         </section>
         <section id="predictions">
           <TopPredictions />
