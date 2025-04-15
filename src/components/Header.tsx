@@ -40,7 +40,9 @@ const Header = () => {
     >
       <div className="container px-4 mx-auto flex items-center justify-between">
         <Logo />
-        <Navigation navLinks={navLinks} />
+        <div className="flex-1 flex justify-center">
+          <Navigation navLinks={navLinks} />
+        </div>
       </div>
     </header>
   );
