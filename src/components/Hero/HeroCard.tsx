@@ -8,14 +8,20 @@ import PredictionButtons from './card/PredictionButtons';
 const HeroCard = () => {
   return (
     <div className="relative h-[500px] w-[500px] max-w-full">
-      {/* Glowing orb backdrop */}
-      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/15 via-indigo-500/10 to-purple-500/15 blur-3xl animate-pulse-subtle"></div>
+      {/* Enhanced Glowing Background */}
+      <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-blue-500/10 via-indigo-500/5 to-purple-500/10 blur-3xl animate-pulse-subtle opacity-70"></div>
+      
+      {/* Decorative Light Spot Effect */}
+      <div className="absolute -top-[10%] -right-[10%] w-[200px] h-[200px] rounded-full bg-gradient-to-br from-blue-500/20 via-blue-500/10 to-transparent blur-2xl animate-float opacity-50"></div>
+      
+      {/* Dynamic Radial Gradient Backdrop */}
+      <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.15)_0%,transparent_70%)] opacity-50"></div>
       
       {/* Decorative rings */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-white/5 animate-float" style={{animationDuration: '15s'}}></div>
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full border border-blue-500/10 animate-float" style={{animationDuration: '20s', animationDelay: '0.5s'}}></div>
       
-      {/* Content container */}
+      {/* Content container with enhanced glassmorphism */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="w-[380px] h-[420px] rounded-[2rem] overflow-hidden backdrop-blur-xl bg-gradient-to-br from-gray-900/80 via-gray-900/70 to-gray-900/80 border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.4)] transform rotate-3 transition-all duration-500 hover:rotate-0 hover:scale-105 hover:shadow-[0_30px_80px_rgba(59,130,246,0.2)]">
           <div className="h-full w-full p-8 flex flex-col">
@@ -46,3 +52,4 @@ const HeroCard = () => {
 };
 
 export default HeroCard;
+
