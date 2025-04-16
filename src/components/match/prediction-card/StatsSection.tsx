@@ -1,9 +1,8 @@
-
 import React from 'react';
 import { Percent } from 'lucide-react';
 import { Team } from '../../../data/premier-league-teams';
 
-interface StatsSectionProps {
+interface DetailedStatsProps {
   homeTeam: Team;
   awayTeam: Team;
   bothTeamsScoreChance: number;
@@ -14,16 +13,64 @@ interface StatsSectionProps {
   underChance: number;
 }
 
-const StatsSection: React.FC<StatsSectionProps> = ({
-  homeTeam,
-  awayTeam,
-  bothTeamsScoreChance,
-  homeGoalChance,
-  awayGoalChance,
-  overUnderLine,
-  overChance,
-  underChance
-}) => {
+interface BasicStatsProps {
+  title: string;
+  labels: string[];
+  values: number[];
+  colors: string[];
+  predictionResult: string;
+}
+
+type StatsSectionProps = DetailedStatsProps | BasicStatsProps;
+
+const isBasicStats = (props: StatsSectionProps): props is BasicStatsProps => {
+  return 'title' in props && 'labels' in props && 'values' in props;
+};
+
+const StatsSection: React.FC<StatsSectionProps> = (props) => {
+  if (isBasicStats(props)) {
+    const { title, labels, values, colors, predictionResult } = props;
+    
+    return (
+      <div className="p-4 bg-white/5 rounded-xl border border-white/5">
+        <h4 className="text-xs font-medium text-gray-400 mb-3 flex items-center gap-1">
+          <Percent className="h-3 w-3" />
+          <span>{title}</span>
+        </h4>
+        
+        <div className="space-y-3">
+          {labels.map((label, index) => (
+            <div key={index}>
+              <div className="flex justify-between text-xs mb-1">
+                <span className={`text-white ${predictionResult === label.toLowerCase() ? 'font-bold' : ''}`}>
+                  {label}
+                </span>
+                <span className={`text-${colors[index]}-400`}>{values[index]}%</span>
+              </div>
+              <div className="h-1 bg-gray-800 rounded-full overflow-hidden">
+                <div 
+                  className={`h-full bg-${colors[index]}-500 rounded-full`} 
+                  style={{width: `${values[index]}%`}}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+  
+  const {
+    homeTeam,
+    awayTeam,
+    bothTeamsScoreChance,
+    homeGoalChance,
+    awayGoalChance,
+    overUnderLine,
+    overChance,
+    underChance
+  } = props;
+  
   return (
     <div className="mt-6 space-y-4 animate-fade-in" style={{animationDuration: '0.3s'}}>
       <div className="p-4 bg-white/5 rounded-xl border border-white/5">
