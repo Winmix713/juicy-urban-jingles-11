@@ -7,17 +7,7 @@ import PredictionButtons from './card/PredictionButtons';
 
 const HeroCard = () => {
   return (
-    <div 
-      className="relative h-[450px] w-[450px] max-w-full"
-      style={{
-        backdropFilter: 'blur(3px)',
-        backgroundColor: 'rgba(255, 255, 255, 0.3)',
-        borderRadius: '38px',
-        boxShadow: `-35px 35px 68px 0px rgba(0, 0, 0, 0.5),
-                    inset 12px -12px 16px 0px rgba(0, 0, 0, 0.6),
-                    inset 0px 11px 28px 0px rgb(255, 255, 255)`
-      }}
-    >
+    <div className="relative h-[450px] w-[450px] max-w-full">
       {/* Enhanced Glowing Background */}
       <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-blue-500/10 via-indigo-500/5 to-purple-500/10 blur-3xl animate-pulse-subtle opacity-70"></div>
       
@@ -62,4 +52,3 @@ const HeroCard = () => {
 };
 
 export default HeroCard;
-
