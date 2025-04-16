@@ -7,9 +7,9 @@ import PredictionButtons from './card/PredictionButtons';
 
 const HeroCard = () => {
   return (
-    <div className="relative h-[450px] w-[450px] max-w-full">
-      {/* Enhanced Glowing Background */}
-      <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-blue-500/10 via-indigo-500/5 to-purple-500/10 blur-3xl animate-pulse-subtle opacity-70"></div>
+    <div className="relative h-[425px] w-[425px] max-w-full">
+      {/* Enhanced Glowing Background with 50% Blur */}
+      <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-blue-500/10 via-indigo-500/5 to-purple-500/10 blur-[1.5px] animate-pulse-subtle opacity-70"></div>
       
       {/* Decorative Light Spot Effect */}
       <div className="absolute -top-[10%] -right-[10%] w-[200px] h-[200px] rounded-full bg-gradient-to-br from-blue-500/20 via-blue-500/10 to-transparent blur-2xl animate-float opacity-50"></div>
