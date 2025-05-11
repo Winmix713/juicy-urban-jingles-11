@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Trophy, Export, BellDot, Check } from 'lucide-react';
+import { Trophy, Share, BellDot, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const TeamStatsCard: React.FC = () => {
@@ -16,7 +16,7 @@ const TeamStatsCard: React.FC = () => {
             variant="ghost"
             className="h-9 w-9 p-0 rounded-full flex items-center justify-center bg-white/5 hover:bg-white/10"
           >
-            <Export className="h-4 w-4 text-gray-400" />
+            <Share className="h-4 w-4 text-gray-400" />
           </Button>
           <Button 
             variant="ghost"

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Trophy, Export, BellDot, Check } from 'lucide-react';
+import { Trophy, Share, BellDot, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface StatisticsCardProps {

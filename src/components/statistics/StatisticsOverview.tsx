@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check, Trophy, BarChart, Lightning } from 'lucide-react';
+import { Check, Trophy, BarChart, Zap } from 'lucide-react';
 
 const StatisticsOverview = () => {
   return (
@@ -51,7 +51,7 @@ const StatisticsOverview = () => {
         <div className="bg-gradient-to-br from-gray-900/90 to-gray-800/30 backdrop-blur-md border border-white/10 rounded-xl p-5 hover:border-blue-500/20 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] group relative overflow-hidden">
           <div className="flex items-center gap-4 mb-2">
             <div className="h-10 w-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-              <Lightning className="h-5 w-5 text-amber-400" />
+              <Zap className="h-5 w-5 text-amber-400" />
             </div>
             <h3 className="text-lg font-bold text-white">3</h3>
           </div>
