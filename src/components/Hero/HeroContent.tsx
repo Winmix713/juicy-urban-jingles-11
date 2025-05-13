@@ -37,6 +37,14 @@ const HeroContent = () => {
           <ChevronRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-20 group-hover:animate-shine" />
         </Link>
+        
+        <Link
+          to="/dashboard"
+          className="group inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 backdrop-blur-sm text-white font-medium px-7 py-3.5 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300"
+        >
+          <span>Irányítópult megtekintése</span>
+          <Award className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+        </Link>
       </div>
       
       {/* Stats Grid */}

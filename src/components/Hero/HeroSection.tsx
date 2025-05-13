@@ -6,7 +6,7 @@ import HeroCard from './HeroCard';
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-[85vh] flex items-center pt-32 pb-20 overflow-hidden">
+    <div className="relative min-h-[85vh] flex items-center pt-28 pb-20 overflow-hidden">
       <HeroBackground />
       
       <div className="container mx-auto px-4 relative z-10">

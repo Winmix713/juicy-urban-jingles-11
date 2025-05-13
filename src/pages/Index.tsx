@@ -7,6 +7,9 @@ import CallToAction from '../components/CallToAction';
 import Footer from '../components/Footer';
 import TopPredictions from '../components/TopPredictions';
 import LeaderboardTable from '../components/leaderboard/LeaderboardTable';
+import MatchesSummaryCard from '../components/matches/MatchesSummaryCard';
+import StatisticsCard from '../components/matches/StatisticsCard';
+import { Trophy, Users, BarChart, Clock } from 'lucide-react';
 
 const Index = () => {
   useEffect(() => {
@@ -31,26 +34,46 @@ const Index = () => {
         
         <section className="relative py-8">
           <div className="container mx-auto px-4">
-            <div className="flex flex-wrap justify-center gap-6 items-center">
-              {[
-                { name: 'Tailwind CSS', version: 'v4.1', color: 'blue' },
-                { name: 'React', version: 'v18', color: 'cyan' },
-                { name: 'Headless UI', version: 'v2.1', color: 'indigo' },
-                { name: 'TypeScript', version: 'v5.3', color: 'purple' }
-              ].map(({ name, version, color }) => (
-                <div
-                  key={name}
-                  className={`bg-${color}-500/10 backdrop-blur-sm border border-${color}-500/20 rounded-xl px-4 py-2 flex items-center gap-2`}
-                >
-                  <span className="text-sm font-medium text-white">{name}</span>
-                  <span className={`text-xs font-semibold text-${color}-400`}>{version}</span>
-                </div>
-              ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <StatisticsCard 
+                title="Aktív felhasználók"
+                icon={<Users className="h-5 w-5 text-blue-400" />}
+                value="10K+"
+                change="8%"
+                isPositive={true}
+              />
+              <StatisticsCard 
+                title="Sikeres tippek"
+                icon={<Trophy className="h-5 w-5 text-emerald-400" />}
+                value="76%"
+                change="2.5%"
+                isPositive={true}
+              />
+              <StatisticsCard 
+                title="Mérkőzések"
+                icon={<BarChart className="h-5 w-5 text-purple-400" />}
+                value="124"
+                change="15"
+                isPositive={true}
+              />
+              <StatisticsCard 
+                title="Élő mérkőzések"
+                icon={<Clock className="h-5 w-5 text-amber-400" />}
+                value="3"
+                change="2"
+                isPositive={true}
+              />
             </div>
           </div>
         </section>
         
-        <section id="match-selection" className="relative py-20">
+        <section className="relative py-10">
+          <div className="container mx-auto px-4">
+            <MatchesSummaryCard />
+          </div>
+        </section>
+        
+        <section id="match-selection" className="relative py-16">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/10 to-transparent"></div>
           <MatchSelectionSection />
         </section>
@@ -58,15 +81,35 @@ const Index = () => {
         <section id="leaderboard" className="relative py-24">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-950/10 to-transparent"></div>
           <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
-              <LeaderboardTable />
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+              <div className="lg:col-span-8">
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-6">
+                  <div className="animate-fade-in">
+                    <div className="inline-flex items-center gap-2.5 mb-3 bg-gradient-to-r from-blue-500/10 to-transparent px-4 py-2 rounded-full">
+                      <Trophy className="w-5 h-5 text-blue-400" />
+                      <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                        Leaderboard
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+                <LeaderboardTable />
+              </div>
+              <div className="lg:col-span-4 space-y-8">
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-6">
+                  <div className="animate-fade-in">
+                    <div className="inline-flex items-center gap-2.5 mb-3 bg-gradient-to-r from-purple-500/10 to-transparent px-4 py-2 rounded-full">
+                      <BarChart className="w-5 h-5 text-purple-400" />
+                      <h2 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                        Top Predictions
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+                <TopPredictions />
+              </div>
             </div>
           </div>
-        </section>
-        
-        <section id="predictions" className="relative py-20">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/10 to-transparent"></div>
-          <TopPredictions />
         </section>
         
         <section id="call-to-action" className="relative">
