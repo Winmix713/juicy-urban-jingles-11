@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { Team } from '../../data/premier-league-teams';
-import { Bar } from 'lucide-react';
+import { BarChart3, X } from 'lucide-react';
 import { 
   Table,
   TableBody,
@@ -33,16 +32,14 @@ const TeamComparison: React.FC<TeamComparisonProps> = ({ teams, onClose }) => {
       <div className="bg-gradient-to-br from-gray-900/90 to-gray-900/80 border border-white/10 rounded-2xl w-full max-w-4xl shadow-2xl animate-scale-up">
         <div className="p-4 flex justify-between items-center border-b border-white/10">
           <div className="flex items-center gap-2">
-            <Bar className="h-5 w-5 text-blue-400" />
+            <BarChart3 className="h-5 w-5 text-blue-400" />
             <h3 className="text-lg font-semibold text-white">Csapat összehasonlítás</h3>
           </div>
           <button 
             onClick={onClose}
             className="h-8 w-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center"
           >
-            <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <X className="h-4 w-4 text-gray-400" />
           </button>
         </div>
         
