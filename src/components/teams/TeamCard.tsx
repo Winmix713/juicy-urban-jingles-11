@@ -11,7 +11,7 @@ interface TeamCardProps {
 const TeamCard: React.FC<TeamCardProps> = ({ team, onClick }) => {
   return (
     <div 
-      className="bg-gradient-to-br from-gray-900/60 to-gray-900/40 backdrop-blur-md border border-white/5 rounded-xl p-5 hover:border-blue-500/20 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] group cursor-pointer"
+      className="bg-gradient-to-br from-gray-900/60 to-gray-900/40 backdrop-blur-md border border-white/5 rounded-xl p-5 hover:border-blue-500/20 transition-all duration-300 group cursor-pointer"
       onClick={() => onClick(team)}
     >
       <div className="flex items-start justify-between mb-4">
